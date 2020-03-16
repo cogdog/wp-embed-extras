@@ -9,6 +9,7 @@ Author: Alan Levine
 Author URI: https://cog.dog
 */
 
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
@@ -91,7 +92,7 @@ function embed_extras_handler_h5p_ecampusontario( $matches, $attr, $url, $rawatt
 // register embed handler for Internet Archive Content
 function embed_extras_register_archive_org(){
 
-	$regex_url = '#https://archive\.org/details/(.*)$#i';
+	$regex_url = '#^https://archive\.org/details/(.*)$#i';
 
 	wp_embed_register_handler(
 			'archive_org',
@@ -125,11 +126,11 @@ function embed_extras_admin_page() {
 	<div class="wrap">
 		<h2>About Embed Extras</h2>
 
-		<p>This plugin extends the capabilities of automatic embedding of media content form external sites simply by pasting the URL in an editor. The sites supported are listed and described below; note that a few will work in the WordPress 5 Block Editor; others will only work in the classic editor (or classic block) or a front-end editor like <a href="http://splot.ca/">SPLOTs</a>. </p>
+		<p>This plugin (available at <a href="https://github.com/cogdog/wp-embed-extras" target="_blank">https://github.com/cogdog/wp-embed-extras</a>) extends the capabilities of automatic embedding of media content form external sites simply by pasting the URL in an editor. The sites supported are listed and described below; note that a few will work in the WordPress 5 Block Editor; others will only work in the classic editor (or classic block) or a front-end editor like <a href="http://splot.ca/">SPLOTs</a>. </p>
 
 		<p>Current support exists for auto embedding content from (see notes below) <strong>Padlet</strong> (<a href="http://padlet.com/" target="_blank">padlet.com</a>), <strong>H5P.com</strong> (<a href="http://h5p.com/" target="_blank">h5p.com</a>), <strong>eCampusOntario H5P Studio</strong> (<a href="http://h5pstudio.ecampusontario.ca/" target="_blank">h5pstudio.ecampusontario.ca</a>), and the <strong>Internet Archive</strong> (<a href="http://archive.org/" target="_blank">archive.org</a>)</p>
 
-		<p>If you want to see more sites supported (add link to a github repo)... If this kind of stuff has any value to you, please consider supporting me so I can do more!</p><p style="text-align:center"><a href="https://patreon.com/cogdog" target="_blank"><img src="https://cogdog.github.io/images/badge-patreon.png" alt="donate on patreon"></a> &nbsp; <a href="https://paypal.me/cogdog" target="_blank"><img src="https://cogdog.github.io/images/badge-paypal.png" alt="donate on paypal"></a></p> '
+		<p>If you want to see more sites supported, <a href="https://github.com/cogdog/wp-embed-extras/issues" target="_blank">submit an issue in GitHub</a>... If this kind of stuff has any value to you, please consider supporting me so I can do more!</p><p style="text-align:center"><a href="https://patreon.com/cogdog" target="_blank"><img src="https://cogdog.github.io/images/badge-patreon.png" alt="donate on patreon"></a> &nbsp; <a href="https://paypal.me/cogdog" target="_blank"><img src="https://cogdog.github.io/images/badge-paypal.png" alt="donate on paypal"></a></p> '
 
 		<h3>Testing Embeds </h3>
 		<form>
