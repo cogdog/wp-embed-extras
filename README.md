@@ -1,6 +1,6 @@
 # Embed Extras WordPress Plugin
 
-** by [cog.dog](https://cog.dog)
+by [cog.dog](https://cog.dog)
 
 -----
 *If this kind of stuff has any value to you, please consider supporting me so I can do more!*
@@ -20,6 +20,12 @@ The Embed Extras plugin adds a few more into the mix.  Why bother with this?
 1. HTML embed codes are messy. They have to be pasted into the text editor (WordPress running in Classic mode) or the HTML block.
 2. Even if you can figure this out, it's all for naught if your site is hosted in a WordPress multisite (the iframe tags of most embed codes are stripped out)
 3. It's much easier to paste in one URL and be done
+
+## Installation
+
+1. Download this plugin using the Green "Clone or Download" button above, use the Download as ZIP option.
+2. Expand the zip and upload via s/ftp `wp-embed-extras` folder to the `/wp-content/plugins/` directory (or upload via the WordPress dashboard Plugin ares the zip file of this repository)
+3. Activate the plugin through the 'Plugins' menu in WordPress
 
 ## Caveats and Editors, Your Mileage Will Vary
 
@@ -66,7 +72,7 @@ Embeds support for Audio, Video, Texts, even their collection of software.
 
 ## History
 
-* Mar 16, 2020: First version (v1. committed
+* Mar 16, 2020: First version (v .15)
 * Mar 7, 2020: The idea emerges and test version shared [It Takes More Magic Than a Saw to Support WordPress Media Embeds](https://cogdogblog.com/2020/03/magic-wordpress-media-embeds/) (CogDogBlog.com)
 
 
