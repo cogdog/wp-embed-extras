@@ -2,8 +2,8 @@
 /*
 Plugin Name: Cogdog Auto Embed Extras
 Plugin URI: https://github.com/cogdog/embed-extras
-Description: Enables a few more auto embeds for padlet, selected H5P sources, Internet Archive audio/video, Vocaroo, Sodphonic
-Version: 0.3
+Description: Enables a few more auto embeds for padlet, Internet Archive audio/video, Vocaroo, Sodphonic, Mastodon
+Version: 0.4
 License: GPLv2
 Author: Alan Levine
 Author URI: https://cog.dog
@@ -15,7 +15,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define('EMBED_EXTRAS_PLUGIN_VERSION', '0.3');
+define('EMBED_EXTRAS_PLUGIN_VERSION', '0.2');
 
 // scripts and styles get in the queue
 add_action('wp_enqueue_scripts', 'embed_extras_enqueue_stuff');
@@ -56,7 +56,18 @@ function embed_extras_register_embeds() {
 		'embed_extras_handler_sodaphonic'
 	);
 
+
+	// handler for mastodons
+		
+	wp_embed_register_handler(
+		'mastodon',
+		'#^https?:\/\/((?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9])\/@([a-zA-Z0-9\_]+)\/(\d+)$#i',
+		'embed_extras_handler_mastodon'
+	);
+
+
 }
+
 
 function embed_extras_handler_archive_org( $matches, $attr, $url, $rawattr ) {
 
@@ -82,5 +93,14 @@ function embed_extras_handler_sodaphonic( $matches, $attr, $url, $rawattr ) {
 	
 	return $embed;
 }
+
+function embed_extras_handler_mastodon( $matches, $attr, $url, $rawattr ) {
+
+	$embed = '<iframe src="https://' . esc_attr($matches[1]) . '/@' . esc_attr($matches[2]) . '/' . esc_attr($matches[3]) . '/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen"></iframe><script src="https://' . esc_attr($matches[1]) . '/embed.js" async="async"></script>';
+
+	return $embed;
+}
+
+
 
 ?>

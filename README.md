@@ -49,12 +49,23 @@ Embeds support for Audio, Video, Texts, even their collection of software.
 Any audio recorded on (Vocaroo)[https://vocaroo.com] in either URL format `https://voca.ro/1nE0WWUqhxlN` or `https://vocaroo.com/1nRPpQCPhQ4M`
 
 ### Sodaphonic Boombox
-Another nifty web recordingediting tool, embed [audio recorded into Boonbox](https://sodaphonic.com/boombox) or edited with the [Sodaphonic Editor](https://sodaphonic.com/editor). Examples.
+Another nifty web recording/editing tool, embed [audio recorded into Boonbox](https://sodaphonic.com/boombox) or edited with the [Sodaphonic Editor](https://sodaphonic.com/editor). Examples.
 
 * `https://sodaphonic.com/audio/344uhz2j8NUJjyUkckQq`
 
+### Mastodon
+Embed any public toot from it's URL, in form:
+
+* `https://some.mastodon.instance/@usermame/098765431ID`
+
+or for real example https://social.fossdle.org/@cogdog/109506785930744037
+
+
+
 ## History
 
+
+* Dec 14 2022: Added a handler to support embeds of mastodon urls (does not render correct in editor but works on publish). See https://cogdogblog.com/2022/12/toot-in-em-bed/
 * Dec 11, 2022: Returned to add support for Vocaroo and Sodaphonic. H5P ones removed, host sites are too picky about frame sharing. Cleaned up some functions and regex.
 * Mar 7, 2020: The idea emerges and test version shared [It Takes More Magic Than a Saw to Support WordPress Media Embeds](https://cogdogblog.com/2020/03/magic-wordpress-media-embeds/) (CogDogBlog.com)
 * Mar 16, 2020: First version (v .15)
