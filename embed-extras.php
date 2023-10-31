@@ -3,7 +3,7 @@
 Plugin Name: Cogdog Auto Embed Extras
 Plugin URI: https://github.com/cogdog/embed-extras
 Description: Enables a few more auto embeds for padlet, Internet Archive audio/video, Vocaroo, Sodphonic, Mastodon
-Version: 0.4
+Version: 0.5
 License: GPLv2
 Author: Alan Levine
 Author URI: https://cog.dog
@@ -15,7 +15,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define('EMBED_EXTRAS_PLUGIN_VERSION', '0.2');
+define('EMBED_EXTRAS_PLUGIN_VERSION', '0.5');
 
 // scripts and styles get in the queue
 add_action('wp_enqueue_scripts', 'embed_extras_enqueue_stuff');
@@ -57,17 +57,22 @@ function embed_extras_register_embeds() {
 	);
 
 
-	// handler for mastodons
-		
+	// handler for mastodon
 	wp_embed_register_handler(
 		'mastodon',
 		'#^https?:\/\/((?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9])\/@([a-zA-Z0-9\_]+)\/(\d+)$#i',
 		'embed_extras_handler_mastodon'
 	);
+	
+	// handler for pixelfed
+	wp_embed_register_handler(
+		'pixelfed',
+				'#^https?:\/\/((?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9])\/p\/[a-zA-Z0-9\_]+\/(\d+)$#i',
+		'embed_extras_handler_pixelfed'
+	);
 
 
 }
-
 
 function embed_extras_handler_archive_org( $matches, $attr, $url, $rawattr ) {
 
@@ -101,6 +106,12 @@ function embed_extras_handler_mastodon( $matches, $attr, $url, $rawattr ) {
 	return $embed;
 }
 
+function embed_extras_handler_pixelfed( $matches, $attr, $url, $rawattr ) {
+	// handler for pixelfed embeds
+	$embed = '<iframe src="' . esc_attr($matches[0]) .  '/embed?caption=false&likes=false&layout=compact" class="pixelfed__embed" style="max-width:100%; min-height:600px; border:0" width="600" allowfullscreen="allowfullscreen"></iframe><script async defer src="https:/' . esc_attr($matches[1]) . '/embed.js" async="async"></script>';
+
+	return $embed;
+}
 
 
 ?>

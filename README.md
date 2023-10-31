@@ -22,9 +22,8 @@ I hope.
 This will work on self-hosted WordPress sites where you can install your own plugins or themes.  
 
 1. [Download this plugin](https://github.com/cogdog/wp-embed-extras/archive/refs/heads/master.zip) using the Green via the **Code** button above, use the Download as ZIP option.
-2. In your dashboard, go to **Plugs** then click **Add New** and finally the **Upload Plugin** button.
+2. In your dashboard, go to **P;ugins** then click **Add New** and finally the **Upload Plugin** button.
 3. Activate the plugin through the 'Plugins' menu in WordPress
-
 
 
 
@@ -60,14 +59,20 @@ Embed any public toot from it's URL, in form:
 
 or for real example https://social.fossdle.org/@cogdog/109506785930744037
 
+### Pixelfed
 
+Embed a photo shared through a pixelfed instance, using the public share URL in the form
+
+* `https://some.pixelfed.instance/p/usermame/p/1234567890`
+
+or for real example https://pixelfed.social/p/cogdog/622954251507231026
 
 ## History
 
-
-* Dec 14 2022: Added a handler to support embeds of mastodon urls (does not render correct in editor but works on publish). See https://cogdogblog.com/2022/12/toot-in-em-bed/
-* Dec 11, 2022: Returned to add support for Vocaroo and Sodaphonic. H5P ones removed, host sites are too picky about frame sharing. Cleaned up some functions and regex.
-* Mar 7, 2020: The idea emerges and test version shared [It Takes More Magic Than a Saw to Support WordPress Media Embeds](https://cogdogblog.com/2020/03/magic-wordpress-media-embeds/) (CogDogBlog.com)
+* Oct 30 2023: (v0.5) New handler to sipport embeds of photos published through any pixelfed instance, see https://cogdogblog.com/2023/10/pixelfedding/
+* Dec 14 2022: (v0.4) Added a handler to support embeds of mastodon urls (does not render correct in editor but works on publish). See https://cogdogblog.com/2022/12/toot-in-em-bed/
+* Dec 11, 2022: (v0.3) Returned to add support for Vocaroo and Sodaphonic. H5P ones removed, host sites are too picky about frame sharing. Cleaned up some functions and regex.
+* Mar 7, 2020:  (v0.2) The idea emerges and test version shared [It Takes More Magic Than a Saw to Support WordPress Media Embeds](https://cogdogblog.com/2020/03/magic-wordpress-media-embeds/) (CogDogBlog.com)
 * Mar 16, 2020: First version (v .15)
 
 
